@@ -59,6 +59,7 @@
         })
 
         
+        //Jeg har hjulpet Fatima Ahmed, Rochelle Gopalan og Ezat Jakob
 
         //Variabel for meny-HTML
         //TODO: Skal ikke starte som en tom streng, må inneholde noe HTML for å møte oppgaveteksten...
@@ -67,16 +68,20 @@
         //Gå gjennom første nivå av menupoints-array
         menuPoints.map(category => {
             //TODO: Forbered HTML med overskrift og listestart
-            
+            menuHTML += `<ul><h2>${category.menuheader}</h2>`
             //TODO: Gå gjennom array på andre nivå (menulinks)
             //TODO: For hver menulink: fyll menuHTML med listeelementer og link
-            
+            category.menulinks.map(link => {
+                menuHTML += `<li><a href="${link.url}">${link.menutext}</a></li>`
+            })
             //TODO: Avslutt liste
-            
+            menuHTML += `</ul>`
         })
 
+
+
         //TODO: Skriv ut HTML til <nav>:
-        
+        document.getElementById("menu").innerHTML += menuHTML
     </script>
 </body>
 </html>

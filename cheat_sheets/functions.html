@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <p id="test"></p>
+    <p id="parameterTest"></p>
+    <h2>Alderskalkulator</h2>
+    <p id="ageText"></p>
+
+    <script>
+        //deklarere en funksjon kalt testFunction
+        function testFunction() {
+            console.log("testfunction kjører")
+
+            const testing = false
+
+            if (testing) {
+                document.getElementById("test").innerHTML = "Testing er ok"
+            } else {
+                document.getElementById("test").innerHTML = "Testing feilet"
+            }
+
+        }
+
+        //Kjører testFunction
+        testFunction()
+
+        //Deklarere men funksjon med parameter
+        function alarmClock(day, time) {
+            console.log(time)
+            if(day != "saturday" && time === "06:30") {
+                document.getElementById("parameterTest").innerHTML = "Våkne du må på skolen!"
+            }
+        }
+
+        //Kjøre nfunksjonen alarmClock
+        alarmClock("thursday", "06:30")
+
+        //Deklarere en alderskalkulatorfunksjon med to parametre:
+        //en persons fødselsår og året vi skal regne ut alderen i (med en standard verdi)
+        function ageKalkulator(birthyear, year = 2023) {
+            const age = year - birthyear
+            let text = ""
+
+            if (year < 2023) {
+                text = `I ${year} var du ${age} år gammel`
+            }
+            else if (year > 2023) {
+                text = `I ${year} vil du være ${age} år gammel`
+            }
+            else {
+                text = `I år er du ${age} år gammel`
+            }
+            document.getElementById("ageText").innerHTML = text
+        }
+
+        //Kaller på funksjon
+        ageKalkulator(2004, 2025)
+    </script>
+</body>
+</html>

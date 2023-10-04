@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametre</title>
+</head>
+<body>
+    <p id="name"></p>
+    <p id="email"></p>
+    <p id="age"></p>
+
+    <script>
+        function print(name, email, birthyear) {
+            const aar = 2023
+            document.getElementById("name").innerHTML = name
+            document.getElementById("email").innerHTML = `<a href="mailto:${email}">${email}</a>`
+            document.getElementById("age").innerHTML = `Du er ${aar - birthyear} år gammel`
+        }
+
+        print("Mohammed", "mohammb@hiof.no", 2004)
+    </script>
+</body>
+</html>

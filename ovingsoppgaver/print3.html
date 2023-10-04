@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametre med standard verdi</title>
+</head>
+<body>
+    <p id="name"></p>
+    <p id="mail"></p>
+    <p id="age"></p>
+
+    <script>
+        function print(name = "Ikke oppgitt", birthyear = "Ikke oppgitt", mail = "Ikke oppgitt") {
+            document.getElementById("name").innerHTML = name
+            document.getElementById("mail").innerHTML = `<a "href=mailto:${mail}"">${mail}</a>`
+            if (birthyear == "Ikke oppgitt") {
+                document.getElementById("age").innerHTML = birthyear
+            }
+            else {
+                document.getElementById("age").innerHTML = 2023 - Number(birthyear)
+            }
+        }
+
+        print("Mohammed", "2004", "mohammb.hiof.no")
+    </script>
+</body>
+</html>
